@@ -1,4 +1,4 @@
-site_name: Seller API Docs - Sastodeal
+site_name: Vendor API Docs - Sastodeal
 nav:
     - Introduction: index.md
     - Contact Us: contact-us.md
