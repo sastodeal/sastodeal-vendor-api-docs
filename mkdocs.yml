@@ -1,6 +1,10 @@
 site_name: Vendor API Docs - Sastodeal
 nav:
     - Introduction: index.md
+    - API Documentation:
+      - Authentication API: api/authentication.md
+      - SKU List API:
+      - Inventory Update:
     - Contact Us: contact-us.md
 theme:
   name: material
