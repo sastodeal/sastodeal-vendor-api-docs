@@ -7,3 +7,6 @@ To register as a vendor at [Sastodeal](https://www.sastodeal.com) please follow 
 
 # Built With
 This documentation was built using [Mkdocs](https://www.mkdocs.org/).
+
+# Link to Documentation
+[https://sastodeal.github.io/sastodeal-vendor-api-docs/](https://sastodeal.github.io/sastodeal-vendor-api-docs/)
