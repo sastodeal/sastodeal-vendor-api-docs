@@ -16,7 +16,7 @@ Sastodeal Vendor APIs uses [Bearer Token for authentication](https://swagger.io/
     "g4q0ljyzmynjbcq1m8ek1h7k3h75tflz"
 
 # Examples
-## C#
+## C Sharp
     var client = new RestClient("https://www.sastodeal.com/rest/V1/integration/customer/token");
     client.Timeout = -1;
     var request = new RestRequest(Method.POST);
@@ -25,7 +25,7 @@ Sastodeal Vendor APIs uses [Bearer Token for authentication](https://swagger.io/
     request.AddParameter("password", "yourpasshere");
     IRestResponse response = client.Execute(request);
     Console.WriteLine(response.Content);
-    
+
 ## PHP
     <?php
 

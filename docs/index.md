@@ -1,15 +1,4 @@
 # Welcome to Sastodeal Vendor API Documentation
 
-## Commands
-
-* `mkdocs new [dir-name]` - Create a new project.
-* `mkdocs serve` - Start the live-reloading docs server.
-* `mkdocs build` - Build the documentation site.
-* `mkdocs -h` - Print help message and exit.
-
-## Project layout
-
-    mkdocs.yml    # The configuration file.
-    docs/
-        index.md  # The documentation homepage.
-        ...       # Other markdown pages, images and other files.
+1. First you will have register on [Marketplace Registration](https://www.sastodeal.com/customer/account/create/v/1/)
+2. Then Authenticate to get a bearer token reading this [Authentication API documentation](/api/authentication/)
