@@ -1,0 +1,10 @@
+site_name: Seller API Docs - Sastodeal
+nav:
+    - Introduction: index.md
+    - Contact Us: contact-us.md
+theme:
+  name: material
+  palette:
+    primary: teal
+  logo: ''
+copyright: 'Copyright &copy; 2021 Sasto Deal Pvt. Ltd'
