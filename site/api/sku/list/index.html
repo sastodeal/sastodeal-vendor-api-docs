@@ -270,8 +270,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#request" class="md-nav__link">
-    Request
+  <a href="#request-header" class="md-nav__link">
+    Request Header
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#request-body" class="md-nav__link">
+    Request Body
   </a>
   
 </li>
@@ -287,6 +294,18 @@
   
 </nav>
       
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../update/" class="md-nav__link">
+        Bulk Inventory, Price, Special Price Update API
+      </a>
     </li>
   
 
@@ -352,8 +371,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#request" class="md-nav__link">
-    Request
+  <a href="#request-header" class="md-nav__link">
+    Request Header
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#request-body" class="md-nav__link">
+    Request Body
   </a>
   
 </li>
@@ -383,32 +409,61 @@
 <h2 id="method">Method</h2>
 <p>GET</p>
 <h2 id="endpoint">Endpoint</h2>
-<pre><code>https://www.sastodeal.com/rest/V1/integration/customer/token
+<pre><code>https://www.sastodeal.com/rest/V1/seller-products/{page_number_here}
 </code></pre>
-<h2 id="request">Request</h2>
-<pre><code>Body Form Data
-username {username_text}
-password {password_text}
+<h2 id="request-header">Request Header</h2>
+<pre><code>Authorization: Bearer {bearer_token_here}
+Content-Type: application/json
+</code></pre>
+<h2 id="request-body">Request Body</h2>
+<pre><code>keep empty
 </code></pre>
 <h2 id="response">Response</h2>
-<p><em>Bearer token with a JSON String which looks like:</em>
-"g4q0ljyzmynjbcq1m8ek1h7k3h75tflz"</p>
+<pre><code>{
+    "items": [
+        {
+            "sku": "49.699-MMART",
+            "name": "Meizan Corn Oil  2Lit Jar ",
+            "price": "850.00",
+            "special_price": "0.00",
+            "special_from_date": null,
+            "special_to_date": null,
+            "stock_status": "1",
+            "stock_quantity": "15"
+        }
+    ],
+    "current_page": 1,
+    "total_pages": 1
+}
+</code></pre>
 <h1 id="examples">Examples</h1>
+<h2 id="c-sharp">C Sharp</h2>
+<pre><code>var client = new RestClient("https://www.sastodeal.com/rest/V1/seller-products/1");
+client.Timeout = -1;
+var request = new RestRequest(Method.GET);
+request.AddHeader("Authorization", "Bearer bearer_token_here");
+request.AddHeader("Content-Type", "application/json");
+IRestResponse response = client.Execute(request);
+Console.WriteLine(response.Content);
+</code></pre>
 <h2 id="php">PHP</h2>
 <pre><code>&lt;?php
 
 $curl = curl_init();
 
 curl_setopt_array($curl, array(
-    CURLOPT_URL =&gt; 'https://www.sastodeal.com/rest/V1/integration/customer/token',
-    CURLOPT_RETURNTRANSFER =&gt; true,
-    CURLOPT_ENCODING =&gt; '',
-    CURLOPT_MAXREDIRS =&gt; 10,
-    CURLOPT_TIMEOUT =&gt; 0,
-    CURLOPT_FOLLOWLOCATION =&gt; true,
-    CURLOPT_HTTP_VERSION =&gt; CURL_HTTP_VERSION_1_1,
-    CURLOPT_CUSTOMREQUEST =&gt; 'POST',
-    CURLOPT_POSTFIELDS =&gt; array('username' =&gt; 'youremail@domain.com','password' =&gt; 'yourpasshere')
+CURLOPT_URL =&gt; 'https://www.sastodeal.com/rest/V1/seller-products/1',
+CURLOPT_RETURNTRANSFER =&gt; true,
+CURLOPT_ENCODING =&gt; '',
+CURLOPT_MAXREDIRS =&gt; 10,
+CURLOPT_TIMEOUT =&gt; 0,
+CURLOPT_FOLLOWLOCATION =&gt; true,
+CURLOPT_HTTP_VERSION =&gt; CURL_HTTP_VERSION_1_1,
+CURLOPT_CUSTOMREQUEST =&gt; 'GET',
+CURLOPT_HTTPHEADER =&gt; array(
+        'Authorization: Bearer bearer_token_here',
+        'Content-Type: application/json'
+    ),
 ));
 
 $response = curl_exec($curl);
@@ -418,19 +473,16 @@ echo $response;
 </code></pre>
 <h2 id="javascript">javascript</h2>
 <pre><code>var myHeaders = new Headers();
-
-var formdata = new FormData();
-formdata.append("username", "youremail@domain.com");
-formdata.append("password", "yourpasshere");
+myHeaders.append("Authorization", "Bearer bearer_token_here");
+myHeaders.append("Content-Type", "application/json");
 
 var requestOptions = {
-    method: 'POST',
-    headers: myHeaders,
-    body: formdata,
-    redirect: 'follow'
+method: 'GET',
+headers: myHeaders,
+redirect: 'follow'
 };
 
-fetch("https://www.sastodeal.com/rest/V1/integration/customer/token", requestOptions)
+fetch("https://www.sastodeal.com/rest/V1/seller-products/1", requestOptions)
 .then(response =&gt; response.text())
 .then(result =&gt; console.log(result))
 .catch(error =&gt; console.log('error', error));
@@ -468,13 +520,13 @@ fetch("https://www.sastodeal.com/rest/V1/integration/customer/token", requestOpt
         </a>
       
       
-        <a href="../../../contact-us/" class="md-footer__link md-footer__link--next" rel="next">
+        <a href="../update/" class="md-footer__link md-footer__link--next" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              Contact Us
+              Bulk Inventory, Price, Special Price Update API
             </div>
           </div>
           <div class="md-footer__button md-icon">
