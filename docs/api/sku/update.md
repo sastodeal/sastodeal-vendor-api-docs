@@ -27,9 +27,59 @@ GET
     }
 
 
-## Response
-response: message of success or failure due to products not belonging to this seller
-* This is WIP and will be modified in the next release*
+# Response
+## Success
+- Note: Some items keys may not be shown on response due to internal validation fail, they will be skipped for update as well. 
+```
+{
+    "update_stats": [
+        {
+            "sku": "Configurable Test-Gray",
+            "price": "1000",
+            "special_price": "500",
+            "special_from_date": "2021-05-01 00:00:00",
+            "special_tod_date": "2021-05-01 00:00:00",
+            "stock_quantity": "100",
+            "message": "updated"
+        },
+        {
+            "sku": "Configurable Test-Black",
+            "price": "2000",
+            "special_price": "1000",
+            "special_from_date": "2021-04-30 00:00:00",
+            "special_tod_date": "2021-04-30 00:00:00",
+            "stock_quantity": "200",
+            "message": "updated"
+        },
+        {
+            "sku": "Configurable Test-Green",
+            "price": "3000",
+            "special_price": "1500",
+            "special_from_date": "2021-04-30 00:00:00",
+            "special_tod_date": "2021-05-01 00:00:00",
+            "stock_quantity": "300",
+            "message": "updated"
+        }
+    ],
+    "code": 200
+}
+```
+
+## Failure
+- case: One or more products does not beling to the seller
+```
+{
+    "message": "Some products in list does not belong to this seller.",
+    "code": 401,
+    "parameters": {
+        "sku": [
+            "Configurable Test 2-Gray",
+            "Configurable Test 2-Black"
+        ]
+    },
+    "trace": null
+}
+```
 
 # Examples
 ## C Sharp
