@@ -17,6 +17,8 @@ GET
 
 ## Response
     {
+        "current_page": 1,
+        "total_pages": 1,
         "items": [
             {
                 "sku": "49.699-MMART",
@@ -28,9 +30,7 @@ GET
                 "stock_status": "1",
                 "stock_quantity": "15"
             }
-        ],
-        "current_page": 1,
-        "total_pages": 1
+        ]
     }
 
 # Examples
