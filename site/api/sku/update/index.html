@@ -295,13 +295,6 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#response" class="md-nav__link">
-    Response
-  </a>
-  
-</li>
-      
     </ul>
   
 </nav>
@@ -384,13 +377,6 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#response" class="md-nav__link">
-    Response
-  </a>
-  
-</li>
-      
     </ul>
   
 </nav>
@@ -429,9 +415,60 @@ Content-Type: application/json
     ]
 }
 </code></pre>
-<h2 id="response">Response</h2>
-<p>response: message of success or failure due to products not belonging to this seller
-* This is WIP and will be modified in the next release*</p>
+<h1 id="response">Response</h1>
+<h2 id="success">Success</h2>
+<ul>
+<li>Note: Some items keys may not be shown on response due to internal validation fail, they will be skipped for update as well. </li>
+</ul>
+<pre><code>{
+    &quot;update_stats&quot;: [
+        {
+            &quot;sku&quot;: &quot;Configurable Test-Gray&quot;,
+            &quot;price&quot;: &quot;1000&quot;,
+            &quot;special_price&quot;: &quot;500&quot;,
+            &quot;special_from_date&quot;: &quot;2021-05-01 00:00:00&quot;,
+            &quot;special_tod_date&quot;: &quot;2021-05-01 00:00:00&quot;,
+            &quot;stock_quantity&quot;: &quot;100&quot;,
+            &quot;message&quot;: &quot;updated&quot;
+        },
+        {
+            &quot;sku&quot;: &quot;Configurable Test-Black&quot;,
+            &quot;price&quot;: &quot;2000&quot;,
+            &quot;special_price&quot;: &quot;1000&quot;,
+            &quot;special_from_date&quot;: &quot;2021-04-30 00:00:00&quot;,
+            &quot;special_tod_date&quot;: &quot;2021-04-30 00:00:00&quot;,
+            &quot;stock_quantity&quot;: &quot;200&quot;,
+            &quot;message&quot;: &quot;updated&quot;
+        },
+        {
+            &quot;sku&quot;: &quot;Configurable Test-Green&quot;,
+            &quot;price&quot;: &quot;3000&quot;,
+            &quot;special_price&quot;: &quot;1500&quot;,
+            &quot;special_from_date&quot;: &quot;2021-04-30 00:00:00&quot;,
+            &quot;special_tod_date&quot;: &quot;2021-05-01 00:00:00&quot;,
+            &quot;stock_quantity&quot;: &quot;300&quot;,
+            &quot;message&quot;: &quot;updated&quot;
+        }
+    ],
+    &quot;code&quot;: 200
+}
+</code></pre>
+<h2 id="failure">Failure</h2>
+<ul>
+<li>case: One or more products does not beling to the seller</li>
+</ul>
+<pre><code>{
+    &quot;message&quot;: &quot;Some products in list does not belong to this seller.&quot;,
+    &quot;code&quot;: 401,
+    &quot;parameters&quot;: {
+        &quot;sku&quot;: [
+            &quot;Configurable Test 2-Gray&quot;,
+            &quot;Configurable Test 2-Black&quot;
+        ]
+    },
+    &quot;trace&quot;: null
+}
+</code></pre>
 <h1 id="examples">Examples</h1>
 <h2 id="c-sharp">C Sharp</h2>
 <pre><code>var json_request_here = "Add the json request string here";
