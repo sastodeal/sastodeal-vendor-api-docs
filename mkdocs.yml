@@ -2,10 +2,6 @@ site_name: Vendor API Docs - Sastodeal
 nav:
     - Introduction: index.md
     - API Documentation:
-      - Authentication API: api/authentication.md
-      - SKU List API: api/sku/list.md
-      - Bulk Inventory, Price, Special Price Update API: api/sku/update.md
-      - Seller Packed Order Delivery Slip API: api/sku/sellerinvoice.md
       - Vendor Integration API: api/vendor-integration-api.md
     - Contact Us: contact-us.md
 theme:
