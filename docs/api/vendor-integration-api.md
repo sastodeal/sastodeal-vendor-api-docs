@@ -1479,8 +1479,8 @@ quantity            | Stock quantity of Product
 https://sastodealpvtltd-my.sharepoint.com/:x:/g/personal/bharat_sastodeal_com/EQe75DMc7F9CsoifEFWGj8EBQ-Wsn70etXniwzC9Rcewiw?e=G9JXi8
 
 
-## Flipkart Order Tracking API
 
+## Shop Global Order Tracking API
 `API Endpoint`: /api/sales/fk/order/tracking
 
 `Method`: POST
