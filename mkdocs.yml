@@ -1,12 +1,16 @@
 site_name: Vendor API Docs - Sastodeal
 nav:
-    - Introduction: index.md
-    - API Documentation:
-      - Vendor Integration API: api/vendor-integration-api.md
-    - Contact Us: contact-us.md
+  - Introduction: index.md
+  - API Documentation:
+      - Postman Collection: api/postman-collection.md
+      - Http Status: api/status-code.md
+      - Authentication API: api/vendor-integration-auth.md
+      - Catalog Product API: api/product-api.md
+      - Sales Order API: api/sales-order-api.md
+  - Contact Us: contact-us.md
 theme:
   name: material
   palette:
     primary: teal
-  logo: ''
-copyright: 'Copyright &copy; 2021 Sasto Deal Pvt. Ltd'
+  logo: ""
+copyright: "Copyright &copy; 2021 Sasto Deal Pvt. Ltd"
