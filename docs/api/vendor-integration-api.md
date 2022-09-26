@@ -1495,7 +1495,7 @@ https://sastodealpvtltd-my.sharepoint.com/:x:/g/personal/bharat_sastodeal_com/EQ
       "item_status": "SUCCESS",
       "tracking_number": "N69991415001",
       "increment_id": "77410290232",
-      "tracking_type":"domestic" or "international", 
+      "tracking_type":"domestic or international", 
       "trackingList": [
         {
           "trackingManifestNo": "N69991412",

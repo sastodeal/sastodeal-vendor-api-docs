@@ -297,12 +297,12 @@
 * `cod_authorized` and `prepaid_authorized` orders will be only able to updated for `ready_to_pickup`.
 * `cb_confirmed` order will only be able to updated for `cb_ready_to_pickup`.
 
-| Order Status Code | Description | Vendor Type |
-| ---- | ---- | ---- |
-| cod_authorized | Cash on delivery authorized | Nepali vendor |
-| prepaid_authorized | Prepaid authorized | Nepali vendor |
-| ready_to_pickup | Ready to pickup | Nepali vendor |
-| cb_confirmed | Cross border confirmed | Crossborder vendor |
+| Order Status Code  | Description                  | Vendor Type        |
+| ------------------ | ---------------------------- | ------------------ |
+| cod_authorized     | Cash on delivery authorized  | Nepali vendor      |
+| prepaid_authorized | Prepaid authorized           | Nepali vendor      |
+| ready_to_pickup    | Ready to pickup              | Nepali vendor      |
+| cb_confirmed       | Cross border confirmed       | Crossborder vendor |
 | cb_ready_to_pickup | Cross border ready to pickup | Crossborder vendor |
 
 
@@ -360,6 +360,7 @@ https://sastodealpvtltd-my.sharepoint.com/:x:/g/personal/bharat_sastodeal_com/EQ
       "item_id": 458906,
       "item_status": "SUCCESS",
       "tracking_number": "N69991415001",
+      "tracking_type":"domestic or international", 
       "increment_id": "77410290232",
       "trackingList": [
         {
