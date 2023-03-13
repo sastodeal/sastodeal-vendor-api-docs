@@ -13,7 +13,7 @@
     
     
       
-        <title>Apply filter - Vendor API Docs - Sastodeal</title>
+        <title>Webhook API - Vendor API Docs - Sastodeal</title>
       
     
     
@@ -66,7 +66,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#applying-filter-in-list-api" class="md-skip">
+        <a href="#webhook-list-api" class="md-skip">
           Skip to content
         </a>
       
@@ -99,7 +99,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Apply filter
+              Webhook API
             
           </span>
         </div>
@@ -273,11 +273,62 @@
 
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../webhook-api/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Webhook API
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         Webhook API
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#webhook-list-api" class="md-nav__link">
+    Webhook List API
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#webhook-createupdate-api" class="md-nav__link">
+    Webhook Create/Update API
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#webhook-delete-api" class="md-nav__link">
+    Webhook Delete API
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -322,8 +373,22 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#applying-filter-in-list-api" class="md-nav__link">
-    Applying Filter in List API
+  <a href="#webhook-list-api" class="md-nav__link">
+    Webhook List API
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#webhook-createupdate-api" class="md-nav__link">
+    Webhook Create/Update API
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#webhook-delete-api" class="md-nav__link">
+    Webhook Delete API
   </a>
   
 </li>
@@ -343,16 +408,52 @@
                   
 
 
-  <h1>Apply filter</h1>
+  <h1>Webhook API</h1>
 
-<h2 id="applying-filter-in-list-api">Applying Filter in List API</h2>
-<ul>
-<li><code>per-page</code>: specifies the maximum number of items to return. The value must be an integer. If the per-page is not specified, the system returns 20 matches.</li>
-<li><code>page</code>: specifies the current page.</li>
-<li><code>filter</code>: specifies filter which should be in JSON format</li>
-</ul>
-<p><strong>Example List Request URL</strong></p>
-<pre><code>/api/pim/product?page-page=20&amp;page=1&amp;filter={&quot;status&quot;: &quot;enable&quot;}
+<h3 id="webhook-list-api">Webhook List API</h3>
+<p><code>API Endpoint</code>: /api/crm/webhook</p>
+<p><code>Method</code>: GET</p>
+<p><strong>Response</strong></p>
+<p><code>HTTP_STATUS</code>: 200</p>
+<pre><code class="language-json">{
+    &quot;items&quot;: {
+        &quot;cancel&quot;: {
+            &quot;headers&quot;: [],
+            &quot;url&quot;: &quot;https://example.com/&quot;,
+            &quot;status&quot;: true
+        }
+    }
+}
+</code></pre>
+<h3 id="webhook-createupdate-api">Webhook Create/Update API</h3>
+<p><code>API Endpoint</code>: /api/crm/webhook/save</p>
+<p><code>Method</code>: POST</p>
+<p><strong>Request</strong></p>
+<pre><code class="language-json">{
+    &quot;type&quot;:&quot;cancel&quot;,
+    &quot;url&quot;:&quot;https://example.com/&quot;,
+    &quot;headers&quot;:{
+        &quot;Authorization&quot;:&quot;Bearer token.......&quot;
+    },
+    &quot;status&quot;:true
+}
+</code></pre>
+<p><strong>Response</strong></p>
+<p><code>HTTP_STATUS</code>: 200</p>
+<pre><code class="language-json">{
+    &quot;detail&quot;: &quot;Successfully Saved...&quot;
+}
+
+</code></pre>
+<h3 id="webhook-delete-api">Webhook Delete API</h3>
+<p><code>API Endpoint</code>: /api/crm/webhook/{type}</p>
+<p><code>Method</code>: DELETE</p>
+<p><strong>Response</strong></p>
+<p><code>HTTP_STATUS</code>: 200</p>
+<pre><code class="language-json">{
+    &quot;detail&quot;: &quot;Successfully Deleted...&quot;
+}
+
 </code></pre>
 
 
@@ -369,6 +470,42 @@
       </main>
       
         <footer class="md-footer">
+  
+    
+    <nav class="md-footer__inner md-grid" aria-label="Footer" >
+      
+        
+        <a href="../sales-order-api/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Sales Order API" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Sales Order API
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../../contact-us/" class="md-footer__link md-footer__link--next" aria-label="Next: Contact Us" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              Contact Us
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
